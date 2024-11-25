@@ -21,17 +21,14 @@ const StackNavigator = () => {
                 color: Colors.gray
             }
         }}>
-
             <Stack.Screen
-
                 options={({ navigation }) => ({
                     headerRight: () => <HeaderButton navigation={navigation} />
                 })}
-
                 name="Home" component={Home} />
-
-            <Stack.Screen name="Settings" component={Settings} />
-
+            <Stack.Screen options={{
+                animation: "slide_from_right"
+            }} name="Settings" component={Settings} />
         </Stack.Navigator>
     )
 }
