@@ -19,7 +19,8 @@ const StackNavigator = () => {
             },
             headerTitleStyle: {
                 color: Colors.gray
-            }
+            },
+            headerTintColor: Colors.gray
         }}>
             <Stack.Screen
                 options={({ navigation }) => ({
@@ -27,7 +28,8 @@ const StackNavigator = () => {
                 })}
                 name="Home" component={Home} />
             <Stack.Screen options={{
-                animation: "slide_from_right"
+                animation: "slide_from_right",
+                
             }} name="Settings" component={Settings} />
         </Stack.Navigator>
     )
