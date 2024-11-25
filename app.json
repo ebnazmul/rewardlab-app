@@ -1,12 +1,17 @@
 {
   "expo": {
-    "name": "app",
+    "name": "RewardLab",
     "slug": "app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
+    "androidNavigationBar": {
+      "visible": true,
+      "barStyle": "light-content",
+      "backgroundColor": "#3b3b3b"
+    },
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",

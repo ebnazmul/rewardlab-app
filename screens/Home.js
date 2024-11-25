@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 
-const Earn = () => {
+const Home = () => {
 
     return (
         <View className="bg-gray-700">
-            {/* <Text>This is Earn!</Text> */}
+            {/* <Text>This is HOME!</Text> */}
         </View>
     )
 }
 
-export default Earn;
+export default Home;
