@@ -5,6 +5,8 @@ import { MaterialIcons } from "@expo/vector-icons"
 import Earn from "../screens/Earn";
 import Home from "../screens/Home";
 import Colors from "../configs/Colors";
+import HeaderButton from "../utils/HeaderButton";
+import Settings from "../screens/Settings";
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
@@ -19,7 +21,17 @@ const StackNavigator = () => {
                 color: Colors.gray
             }
         }}>
-            <Stack.Screen name="Home" component={Home} />
+
+            <Stack.Screen
+
+                options={({ navigation }) => ({
+                    headerRight: () => <HeaderButton navigation={navigation} />
+                })}
+
+                name="Home" component={Home} />
+
+            <Stack.Screen name="Settings" component={Settings} />
+
         </Stack.Navigator>
     )
 }
