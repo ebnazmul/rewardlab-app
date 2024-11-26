@@ -8,6 +8,7 @@ import Colors from "../configs/Colors";
 import HeaderButton from "../utils/HeaderButton";
 import Settings from "../screens/Settings";
 import Profile from "../screens/Profile";
+import Cashout from "../screens/Cashout";
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
@@ -58,7 +59,7 @@ const TabNavigator = () => {
 
             <Tab.Screen options={{
                 tabBarIcon: ({ color, size }) => <Ionicons name="gift" size={size} color={color} />
-            }} name="Cashout" component={Earn} />
+            }} name="Cashout" component={Cashout} />
 
             <Tab.Screen options={{
                 tabBarIcon: ({ color, size }) => <MaterialIcons name="person" size={size} color={color} />
