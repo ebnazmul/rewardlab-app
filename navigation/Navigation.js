@@ -7,6 +7,7 @@ import Home from "../screens/Home";
 import Colors from "../configs/Colors";
 import HeaderButton from "../utils/HeaderButton";
 import Settings from "../screens/Settings";
+import Profile from "../screens/Profile";
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
@@ -61,7 +62,7 @@ const TabNavigator = () => {
 
             <Tab.Screen options={{
                 tabBarIcon: ({ color, size }) => <MaterialIcons name="person" size={size} color={color} />
-            }} name="Profile" component={Earn} />
+            }} name="Profile" component={Profile} />
 
 
         </Tab.Navigator>

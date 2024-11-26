@@ -1,10 +1,10 @@
-import { View, Image } from "react-native";
+import { Image, Pressable } from "react-native";
 
 const InviteFriendLogo = ({uri}) => {
     return (
-        <View className="p-1 bg-white rounded-md shadow-2xl">
+        <Pressable className="p-1 bg-white rounded-md shadow-2xl">
             <Image className="size-8" source={{uri}} />
-        </View>
+        </Pressable>
     );
 }
 
