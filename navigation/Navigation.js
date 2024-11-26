@@ -1,7 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
-import { MaterialIcons } from "@expo/vector-icons"
+import { MaterialIcons, Ionicons } from "@expo/vector-icons"
 import Earn from "../screens/Earn";
 import Home from "../screens/Home";
 import Colors from "../configs/Colors";
@@ -43,9 +43,9 @@ const TabNavigator = () => {
             },
             headerTitleStyle: {
                 color: Colors.gray
-            }
+            },
+            tabBarActiveTintColor: Colors.secondary110,
         }}>
-
             <Tab.Screen options={{
                 headerShown: false,
                 tabBarIcon: ({ color, size }) => <MaterialIcons name="home" size={size} color={color} />
@@ -56,7 +56,7 @@ const TabNavigator = () => {
             }} name="Earn" component={Earn} />
 
             <Tab.Screen options={{
-                tabBarIcon: ({ color, size }) => <MaterialIcons name="wallet-giftcard" size={size} color={color} />
+                tabBarIcon: ({ color, size }) => <Ionicons name="gift" size={size} color={color} />
             }} name="Cashout" component={Earn} />
 
             <Tab.Screen options={{
