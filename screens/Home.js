@@ -4,7 +4,7 @@ import InviteFriend from '../components/InviteFriend';
 const Home = () => {
 
     return (
-        <View className="bg-white">
+        <View>
             {/* <Text>This is HOME!</Text> */}
             <InviteFriend />
         </View>
