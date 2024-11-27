@@ -9,6 +9,7 @@ import HeaderButton from "../utils/HeaderButton";
 import Settings from "../screens/Settings";
 import Profile from "../screens/Profile";
 import Cashout from "../screens/Cashout";
+import Recharge from "../screens/Recharge";
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
@@ -33,6 +34,10 @@ const StackNavigator = () => {
                 animation: "slide_from_right",
                 
             }} name="Settings" component={Settings} />
+            <Stack.Screen options={{
+                animation: "slide_from_right",
+                
+            }} name="Recharge" component={Recharge} />
         </Stack.Navigator>
     )
 }

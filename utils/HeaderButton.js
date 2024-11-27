@@ -6,7 +6,7 @@ const HeaderButton = ({ navigation }) => {
 
     return (<>
     <View className="rounded-md overflow-hidden">
-        <Pressable className='bg-gray-700 flex-row items-center gap-2 px-4 py-2' onPress={() => navigation.navigate("Settings")} android_ripple={{ color: Colors.gray50 }}>
+        <Pressable className='bg-gray-700 flex-row items-center gap-2 px-4 py-2' onPress={() => navigation.navigate("Recharge")} android_ripple={{ color: Colors.gray50 }}>
             <FontAwesome5 name="coins" size={18} color={"gold"} />
             <Text className="text-xl text-gray-200 font-semibold">0 Points</Text>
         </Pressable>
