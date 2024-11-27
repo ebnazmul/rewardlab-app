@@ -1,6 +1,7 @@
 import { View, Text, Image, Pressable } from "react-native";
 
-const Initial = () => {
+const Initial = ({navigation}) => {
+    
     return (
         <View className="flex-1 justify-between pb-20 pt-40">
             <View>
@@ -15,11 +16,11 @@ const Initial = () => {
             </View>
 
             <View className="px-8 gap-1">
-                <Pressable android_ripple={{color: ""}} className="bg-gray-900/95 py-4 rounded-xl">
+                <Pressable onPress={()=>navigation.navigate("SignUp")} android_ripple={{color: ""}} className="bg-gray-900 py-4 rounded-xl">
                     <Text className='text-gray-200 text-center font-semibold text-xl tracking-wide'>Sign Up</Text>
                 </Pressable>
                 <Text className="text-center">OR</Text>
-                <Pressable android_ripple={{color: ""}} className="bg-sky-500/95 py-4 rounded-xl">
+                <Pressable onPress={()=>navigation.navigate("SignIn")} android_ripple={{color: ""}} className="bg-sky-500 py-4 rounded-xl">
                     <Text className='text-gray-200 text-center font-semibold text-xl tracking-wide'>Sign In</Text>
                 </Pressable>
             </View>
