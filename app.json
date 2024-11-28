@@ -8,7 +8,6 @@
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "androidNavigationBar": {
-      // "visible": true,
       "barStyle": "light-content",
       "backgroundColor": "#3b3b3b"
     },
@@ -24,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.introverse.rewardlab"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -37,6 +37,11 @@
           "faceIDPermission": "Allow $(PRODUCT_NAME) to access your Face ID data to verify your identity."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "e53789f9-bcfc-4b18-87e2-efd755c766fd"
+      }
+    }
   }
 }

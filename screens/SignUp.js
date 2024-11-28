@@ -4,6 +4,7 @@ import Input from "../components/Input/Input";
 import Submit from "../components/Auth/Submit";
 import { useContext, useState } from "react";
 import { MainContext } from "../context/ContextProvider";
+import { get, save } from "../utils/SaveAndGet";
 
 
 const SignUp = ({ navigation }) => {
@@ -13,18 +14,20 @@ const SignUp = ({ navigation }) => {
     const { handleEmailPasswordSignup } = useContext(MainContext)
 
     async function handleSignUp() {
-        if(!name ||!email||!name){
+        if (!name || !email || !name) {
             Alert.alert('Error', "You must fill all the information to Sign Up.")
         }
 
         try {
             const update = await handleEmailPasswordSignup(email, password)
-            console.log(update.stsTokenManager.accessToken);
-              
+            console.log(update.user.accessToken);
+            const res = await save('token', update.user.accessToken)
+            console.log(res);
+
         } catch (error) {
             console.log(error);
         }
-        
+
     }
 
 

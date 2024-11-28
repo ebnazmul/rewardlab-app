@@ -1,11 +1,10 @@
 import { createContext, useEffect, useState } from "react";
 import * as firebase from "firebase/auth";
 import auth from "../configs/firebase.config";
-import * as SecureStorage from "expo-secure-store"
-const { GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword } = firebase;
+const { GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } = firebase;
 
 export const MainContext = createContext(null)
-const googleAuthProvider = new GoogleAuthProvider() 
+const googleAuthProvider = new GoogleAuthProvider()
 
 const ContextProvider = ({ children }) => {
 
@@ -13,10 +12,11 @@ const ContextProvider = ({ children }) => {
     const [initialLoading, setInitialLoading] = useState(true)
 
     useEffect(() => {
-        const unsubscribe = firebase.onAuthStateChanged(auth, (user) => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user)
             }
+            
             setInitialLoading(false)
         })
         return () => unsubscribe()
@@ -41,6 +41,7 @@ const ContextProvider = ({ children }) => {
 
     const value = {
         user,
+        setUser,
         initialLoading,
         handleContinueWithGoogle,
         handleEmailPasswordLogin,
