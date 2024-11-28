@@ -6,6 +6,8 @@ import InitialNavigation from "../navigation/InitialNavigation";
 const AuthStateHandler = () => {
     const { user } = useContext(MainContext)
 
+    
+
     return (
         user ? <Navigation /> : <InitialNavigation />
     );
