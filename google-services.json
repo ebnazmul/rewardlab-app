@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "463813160255",
+    "project_id": "rewardlabapp",
+    "storage_bucket": "rewardlabapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:463813160255:android:da3dcab413c9554219378a",
+        "android_client_info": {
+          "package_name": "com.introverse.rewardlab"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzKl--yK5nE_ntzQ9AoqtFO4O6Rur8eho"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
