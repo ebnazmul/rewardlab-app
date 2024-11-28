@@ -9,7 +9,7 @@ const SignIn = ({ navigation }) => {
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
 
-    const { handleContinueWithGoogle, handleEmailPasswordLogin } = useContext(MainContext)
+    const { handleEmailPasswordLogin } = useContext(MainContext)
 
 
     async function handleLogin() {
@@ -43,7 +43,7 @@ const SignIn = ({ navigation }) => {
                         <Text className="text-sm">By signing up you agree to our terms & privacy policy.</Text>
                         <Submit onPress={handleLogin} name="Sign In" />
                         <Text className="text-center">OR</Text>
-                        <IconButton onPress={handleContinueWithGoogle} fullWidth={true} icon="logo-google">Continue with Google</IconButton>
+                        <IconButton fullWidth={true} icon="logo-google">Continue with Google</IconButton>
                     </View>
                 </View>
 
