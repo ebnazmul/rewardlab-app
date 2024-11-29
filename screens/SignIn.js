@@ -40,7 +40,7 @@ const SignIn = ({ navigation }) => {
                         <Text className="text-sm">By signing up you agree to our terms & privacy policy.</Text>
                         <Submit onPress={handleLogin} name="Sign In" />
                         <Text className="text-center">OR</Text>
-                        <IconButton fullWidth={true} icon="logo-google">Continue with Google</IconButton>
+                        <IconButton disabled={true} fullWidth={true} icon="logo-google">Continue with Google</IconButton>
                     </View>
                 </View>
 
