@@ -49,7 +49,7 @@ const Settings = () => {
                 <Text className="text-lg">Terms & Conditions</Text>
             </Pressable>
             <Pressable onPress={signOut} android_ripple={{ color: Colors.gray50 }} className="flex-row items-center gap-4 p-4 mb-2">
-                <View className="w-6"><MaterialIcons size={24} name="cancel" /></View>
+                <View className="w-6"><MaterialIcons size={24} name="takeout-dining" /></View>
                 <Text className="text-lg">Sign Out</Text>
             </Pressable>
         </View>

@@ -4,33 +4,34 @@ import Input from "../components/Input/Input";
 import Submit from "../components/Auth/Submit";
 import { useContext, useState } from "react";
 import { MainContext } from "../context/ContextProvider";
-import { get, save } from "../utils/SaveAndGet";
-
+import { save } from "../utils/SaveAndGet";
+import SubmitLoading from "../components/Auth/SubmitLoading";
 
 const SignUp = ({ navigation }) => {
     const [name, setName] = useState()
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
     const { handleEmailPasswordSignup } = useContext(MainContext)
+    const [authLoading, setAuthLoading] = useState(false)
 
     async function handleSignUp() {
+
         if (!name || !email || !name) {
             Alert.alert('Error', "You must fill all the information to Sign Up.")
             return;
         }
 
+        setAuthLoading(true)
+
         try {
             const update = await handleEmailPasswordSignup(email, password)
-            console.log(update.user.accessToken);
-            const res = await save('token', update.user.accessToken)
-            console.log(res);
-
+            await save('token', update.user.accessToken)
         } catch (error) {
             Alert.alert('Error', "Something went wrong with the Sign Up process.")
         }
 
+        setAuthLoading(false)
     }
-
 
 
     return (
@@ -47,7 +48,7 @@ const SignUp = ({ navigation }) => {
                         <Input setValue={setEmail} name="Email" />
                         <Input setValue={setPassword} name="Password" />
                         <Text className="text-sm">By signing up you agree to our terms & privacy policy.</Text>
-                        <Submit onPress={handleSignUp} name="Sign Up" />
+                        {!authLoading ? <Submit onPress={handleSignUp} name="Sign Up" /> : <SubmitLoading />}
                         <Text className="text-center">OR</Text>
                         <IconButton disabled={true} fullWidth={true} icon="logo-google">Continue with Google</IconButton>
                     </View>

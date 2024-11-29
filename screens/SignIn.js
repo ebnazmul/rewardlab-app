@@ -4,10 +4,12 @@ import Input from "../components/Input/Input";
 import Submit from "../components/Auth/Submit";
 import { useContext, useState } from "react";
 import { MainContext } from "../context/ContextProvider";
+import SubmitLoading from "../components/Auth/SubmitLoading";
 
 const SignIn = ({ navigation }) => {
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
+    const [authLoading, setAuthLoading] = useState(false)
 
     const { handleEmailPasswordLogin } = useContext(MainContext)
 
@@ -17,13 +19,15 @@ const SignIn = ({ navigation }) => {
             Alert.alert("Error", "Please enter both email and password.");
             return;
         }
+        setAuthLoading(true)
 
         try {
             await handleEmailPasswordLogin(email, password)
         } catch (error) {
-            console.log(error);
             Alert.alert("Error", "Please check your email and password properly.");
         }
+
+        setAuthLoading(false)
     }
 
     return (
@@ -39,7 +43,7 @@ const SignIn = ({ navigation }) => {
                         <Input setValue={setEmail} name="Email" />
                         <Input setValue={setPassword} name="Password" />
                         <Text className="text-sm">By signing up you agree to our terms & privacy policy.</Text>
-                        <Submit onPress={handleLogin} name="Sign In" />
+                        {!authLoading ? <Submit onPress={handleLogin} name="Sign In" /> : <SubmitLoading />}
                         <Text className="text-center">OR</Text>
                         <IconButton disabled={true} fullWidth={true} icon="logo-google">Continue with Google</IconButton>
                     </View>
