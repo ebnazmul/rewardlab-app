@@ -6,7 +6,16 @@ import { MainContext } from "../context/ContextProvider";
 
 const Settings = () => {
 
-    const { setUser } = useContext(MainContext)
+    const { setUser, handleSignout } = useContext(MainContext)
+
+    const signOut = async () => {
+        try {
+            await handleSignout()
+            setUser(null)
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     return (<View className="my-6 flex-1">
         <View className="mx-2 p-4 shadow rounded bg-white">
@@ -22,7 +31,7 @@ const Settings = () => {
                 <View className="w-6"><MaterialIcons size={24} name="policy" /></View>
                 <Text className="text-lg">Terms & Conditions</Text>
             </Pressable>
-            <Pressable onPress={() => setUser(null)} android_ripple={{ color: Colors.gray50 }} className="flex-row items-center gap-4 p-4 mb-2">
+            <Pressable onPress={signOut} android_ripple={{ color: Colors.gray50 }} className="flex-row items-center gap-4 p-4 mb-2">
                 <View className="w-6"><MaterialIcons size={24} name="outlet" /></View>
                 <Text className="text-lg">Sign Out</Text>
             </Pressable>

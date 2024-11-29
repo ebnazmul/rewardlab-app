@@ -13,15 +13,12 @@ const SignIn = ({ navigation }) => {
 
 
     async function handleLogin() {
-
         if (!email || !password) {
             Alert.alert("Error", "Please enter both email and password.");
         }
 
         try {
-            const update = await handleEmailPasswordLogin("111", "222")
-            console.log(update);
-
+            await handleEmailPasswordLogin(email, password)
         } catch (error) {
             console.log(error);
             Alert.alert("Error", "Please check your email and password properly.");
