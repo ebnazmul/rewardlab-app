@@ -16,6 +16,7 @@ const SignUp = ({ navigation }) => {
     async function handleSignUp() {
         if (!name || !email || !name) {
             Alert.alert('Error', "You must fill all the information to Sign Up.")
+            return;
         }
 
         try {
@@ -25,7 +26,7 @@ const SignUp = ({ navigation }) => {
             console.log(res);
 
         } catch (error) {
-            console.log(error);
+            Alert.alert('Error', "Something went wrong with the Sign Up process.")
         }
 
     }

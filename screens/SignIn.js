@@ -15,6 +15,7 @@ const SignIn = ({ navigation }) => {
     async function handleLogin() {
         if (!email || !password) {
             Alert.alert("Error", "Please enter both email and password.");
+            return;
         }
 
         try {
