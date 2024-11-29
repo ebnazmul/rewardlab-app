@@ -11,8 +11,8 @@ import Profile from "../screens/Profile";
 import Cashout from "../screens/Cashout";
 import Recharge from "../screens/Recharge";
 
-const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
+const Stack = createStackNavigator()
 
 const StackNavigator = () => {
     return (
@@ -23,7 +23,8 @@ const StackNavigator = () => {
             headerTitleStyle: {
                 color: Colors.gray
             },
-            headerTintColor: Colors.gray
+            headerTintColor: Colors.gray,
+            animation: "fade_from_right"
         }}>
             <Stack.Screen
                 options={({ navigation }) => ({
@@ -32,11 +33,11 @@ const StackNavigator = () => {
                 name="Home" component={Home} />
             <Stack.Screen options={{
                 animation: "slide_from_right",
-                
+
             }} name="Settings" component={Settings} />
             <Stack.Screen options={{
                 animation: "slide_from_right",
-                
+
             }} name="Recharge" component={Recharge} />
         </Stack.Navigator>
     )
@@ -52,11 +53,21 @@ const TabNavigator = () => {
                 color: Colors.gray
             },
             tabBarActiveTintColor: Colors.secondary110,
+            animation: "none"
         }}>
             <Tab.Screen options={{
                 headerShown: false,
                 tabBarIcon: ({ color, size }) => <MaterialIcons name="home" size={size} color={color} />
-            }} name="Main" component={StackNavigator} />
+            }} name="Main" component={StackNavigator}
+                listeners={({ navigation }) => ({
+                    tabPress: (e) => {
+                        e.preventDefault()
+                        navigation.navigate("Main", {
+                            screen: "Home",
+                        })
+                    }
+                })
+                } />
 
             <Tab.Screen options={{
                 tabBarIcon: ({ color, size }) => <MaterialIcons name="whatshot" size={size} color={color} />

@@ -33,7 +33,6 @@ const Settings = () => {
         );
     };
     
-
     return (<View className="my-6 flex-1">
         <View className="mx-2 p-4 shadow rounded bg-white">
             <Pressable android_ripple={{ color: Colors.gray50 }} className="flex-row items-center gap-4 p-4 mb-2">

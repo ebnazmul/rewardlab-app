@@ -10,7 +10,7 @@ const InitialNavigation = () => {
     
     return (
         <NavigationContainer>
-            <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Navigator screenOptions={{ headerShown: false, animation: "fade_from_bottom" }}>
                 <Stack.Screen name="Initial" component={Initial} />
                 <Stack.Screen name="SignUp" component={SignUp} />
                 <Stack.Screen name="SignIn" component={SignIn} />
