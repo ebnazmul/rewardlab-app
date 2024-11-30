@@ -10,6 +10,7 @@ import Settings from "../screens/Settings";
 import Profile from "../screens/Profile";
 import Cashout from "../screens/Cashout";
 import Recharge from "../screens/Recharge";
+import Topup from "../screens/Topup";
 
 const Tab = createBottomTabNavigator()
 const Stack = createStackNavigator()
@@ -39,6 +40,11 @@ const StackNavigator = () => {
                 animation: "slide_from_right",
 
             }} name="Recharge" component={Recharge} />
+
+            <Stack.Screen options={{
+                animation: "slide_from_right",
+
+            }} name="TopUp" component={Topup} />
         </Stack.Navigator>
     )
 }
