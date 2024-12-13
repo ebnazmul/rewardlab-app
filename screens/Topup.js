@@ -6,7 +6,7 @@ const Topup = () => {
     return (
         <ScrollView className="bg-white p-4 m-4 gap-4">
             <View>
-            <Input name="Phone number"/>
+            <Input name="Phone number or email"/>
             <Text className="mt-2">{`* Please include the country code in your phone number (e.g., +60 for Malaysia).`}</Text>
             
             </View>
